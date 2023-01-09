@@ -9,10 +9,31 @@ import {
   array,                  // Object.freeze([])
   context,                // function context
   false as False,         // () => false
-  function as fn,         // () => {}
+  function as noop,       // () => {}
   identity,               // any => any
   object,                 // Object.freeze({})
   string as str,          // ''
   true as True            // () => true
 } from '@webreflection/empty';
 ```
+
+### isolated exports
+
+Each utility can be imported directly without bloating the outcome:
+
+```js
+import args from '@webreflection/empty/args';
+import arguments as Arguments from '@webreflection/empty/arguments';
+import array from '@webreflection/empty/array';
+import context from '@webreflection/empty/context';
+import false as False from '@webreflection/empty/false';
+import function as noop from '@webreflection/empty/function';
+import identity from '@webreflection/empty/identity';
+import object from '@webreflection/empty/object';
+import string as str from '@webreflection/empty/string';
+import true as True from '@webreflection/empty/true';
+```
+
+### ... but why?
+
+I use one of these utilities all over the place in my projects so I've decided that this approch would work better.
