@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/empty",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This is basically the same as [empty](https://www.npmjs.com/package/empty) except it's a dual module and it doesn't care about freezing callbacks (for beter or worse) but it does freeze other references, such as *array* or *object*, and even in production, where *IMHO* it matters most.",
   "main": "./cjs/index.js",
   "scripts": {
