@@ -1,6 +1,6 @@
 {
   "name": "@webreflection/empty",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "main": "./ness/index.js",
   "module": "./ness/index.js",
   "type": "module",
