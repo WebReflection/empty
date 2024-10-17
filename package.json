@@ -1,12 +1,29 @@
 {
   "name": "@webreflection/empty",
   "version": "0.2.1",
-  "description": "This is basically the same as [empty](https://www.npmjs.com/package/empty) except it's a dual module and it doesn't care about freezing callbacks (for beter or worse) but it does freeze other references, such as *array* or *object*, and even in production, where *IMHO* it matters most.",
-  "main": "./cjs/index.js",
+  "main": "./ness/index.js",
+  "module": "./ness/index.js",
+  "type": "module",
   "scripts": {
-    "build": "npm run cjs && npm run test",
-    "cjs": "ascjs --no-default esm cjs",
-    "test": "node test/index.js"
+    "test": "c8 node test.js"
+  },
+  "files": [
+    "./ness/*.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./args": "./ness/args.js",
+    "./arguments": "./ness/arguments.js",
+    "./array": "./ness/array.js",
+    "./arrow": "./ness/arrow.js",
+    "./class": "./ness/class.js",
+    "./context": "./ness/context.js",
+    "./function": "./ness/function.js",
+    "./identity": "./ness/identity.js",
+    "./object": "./ness/object.js",
+    "./symbol": "./ness/symbol.js"
   },
   "keywords": [
     "empty",
@@ -15,62 +32,10 @@
     "utilities"
   ],
   "author": "Andrea Giammarchi",
-  "license": "ISC",
+  "license": "MIT",
+  "description": "Just various empty and frozen references",
   "devDependencies": {
-    "ascjs": "^5.0.1"
-  },
-  "module": "./esm/index.js",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./esm/index.js",
-      "default": "./cjs/index.js"
-    },
-    "./args": {
-      "import": "./esm/args.js",
-      "default": "./cjs/args.js"
-    },
-    "./arguments": {
-      "import": "./esm/arguments.js",
-      "default": "./cjs/arguments.js"
-    },
-    "./array": {
-      "import": "./esm/array.js",
-      "default": "./cjs/array.js"
-    },
-    "./context": {
-      "import": "./esm/context.js",
-      "default": "./cjs/context.js"
-    },
-    "./false": {
-      "import": "./esm/false.js",
-      "default": "./cjs/false.js"
-    },
-    "./freeze": {
-      "import": "./esm/freeze.js",
-      "default": "./cjs/freeze.js"
-    },
-    "./function": {
-      "import": "./esm/function.js",
-      "default": "./cjs/function.js"
-    },
-    "./identity": {
-      "import": "./esm/identity.js",
-      "default": "./cjs/identity.js"
-    },
-    "./object": {
-      "import": "./esm/object.js",
-      "default": "./cjs/object.js"
-    },
-    "./string": {
-      "import": "./esm/string.js",
-      "default": "./cjs/string.js"
-    },
-    "./true": {
-      "import": "./esm/true.js",
-      "default": "./cjs/true.js"
-    },
-    "./package.json": "./package.json"
+    "c8": "^10.1.2"
   },
   "repository": {
     "type": "git",
